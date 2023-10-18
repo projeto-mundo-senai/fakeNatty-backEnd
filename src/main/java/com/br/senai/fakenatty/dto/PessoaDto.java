@@ -14,6 +14,7 @@ public class PessoaDto {
 	char nivelAtividadeFisica;
 	String email;
 	Double altura;
+	
 
 	public PessoaDto(Pessoa pessoa) {
 		this.id = pessoa.getId();

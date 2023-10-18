@@ -28,7 +28,7 @@ public class Pessoa {
 	char nivelAtividadeFisica;
 	String email;
 	@ManyToMany
-	@JoinTable(name = "pessoa_dieta", joinColumns = @JoinColumn(name = "pessoa_id"), inverseJoinColumns = @JoinColumn(name = "dieta_id"))
+	@JoinTable(name = "pessoa_has_dieta", joinColumns = @JoinColumn(name = "pessoa_id"), inverseJoinColumns = @JoinColumn(name = "dieta_id"))
 	List<Dieta> listaDieta;
 
 	public Double getAltura() {
@@ -142,6 +142,11 @@ public class Pessoa {
 	}
 
 	public void setNivelAtividadeFisica(char nivelAtividadeFisica) {
+
+		// S edentario = 100 calorias
+		// A ativo = 280 calorias
+		// M oderadamente ativo = 460 calorias
+		// F ake Natty = 640 calorias
 		this.nivelAtividadeFisica = nivelAtividadeFisica;
 	}
 
@@ -154,15 +159,53 @@ public class Pessoa {
 	}
 
 	public void calculaBasal() {
-		//Levar em consideração nivel de atividade fisica
-		
+		// Levar em consideração nivel de atividade fisica
+
 		if (this.genero == 'H') {
 
-			this.taxaMetabolica = 88.36 + (13.4 * this.peso) + (4.8 * this.altura) - (5.7 * this.idade);
+			// https://nutrium.com/blog/pt-br/calculadora-da-equacao-de-harris-benedict-para-nutricionistas/
+
+			this.taxaMetabolica = 66 + (13.7 * this.peso) + (5 * this.altura) - (6.8 * this.idade);
+
+			if (this.nivelAtividadeFisica == 'S') {
+
+				this.taxaMetabolica = this.taxaMetabolica + 100.00;
+
+			} else if (this.nivelAtividadeFisica == 'A') {
+
+				this.taxaMetabolica = taxaMetabolica + 280;
+
+			} else if (this.nivelAtividadeFisica == 'M') {
+
+				this.taxaMetabolica = this.taxaMetabolica + 460.00;
+
+			} else if (this.nivelAtividadeFisica == 'F') {
+
+				this.taxaMetabolica = this.taxaMetabolica + 640.00;
+
+			}
 
 		} else {
 
-			this.taxaMetabolica = 447.59 + (9.24 * this.peso) + (3.09 * this.altura) - (4.33 * this.idade);
+			this.taxaMetabolica = 655 + (9.6 * this.peso) + (1.8 * this.altura) - (4.7 * this.idade);
+
+			if (this.nivelAtividadeFisica == 'S') {
+
+				this.taxaMetabolica = this.taxaMetabolica + 100.00;
+
+			} else if (this.nivelAtividadeFisica == 'A') {
+
+				this.taxaMetabolica = taxaMetabolica + 280;
+
+			} else if (this.nivelAtividadeFisica == 'M') {
+
+				this.taxaMetabolica = this.taxaMetabolica + 460.00;
+
+			} else if (this.nivelAtividadeFisica == 'F') {
+
+				this.taxaMetabolica = this.taxaMetabolica + 640.00;
+
+			}
 
 		}
 

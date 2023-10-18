@@ -1,11 +1,14 @@
 package com.br.senai.fakenatty.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.br.senai.fakenatty.dto.DietaDto;
 import com.br.senai.fakenatty.model.Dieta;
 import com.br.senai.fakenatty.repository.DietaRepository;
+
+/*Classe essa que vai definir qual o PDF sera direcionado para a pessoa*/
 
 @Service
 public class DietaService {
@@ -20,18 +23,25 @@ public class DietaService {
 
 	public Dieta buscaDieta(DietaDto dietaDto, char pretencaoFisica) {
 		Dieta dieta = new Dieta(dietaDto);
-		//INFLUENCIA DA PRETENCAO FISICA INFLUENCIA NA DIETA
-	
-		if (pretencaoFisica == 'G' || pretencaoFisica == 'g') {
+		// INFLUENCIA DA PRETENCAO FISICA INFLUENCIA NA DIETA
+		if (pretencaoFisica == 'G') {
 			return dietaRepository.findByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutem(
 					dieta.getNumeroCalorias(), dieta.getVegano(), dieta.getVegetariano(), dieta.getLactose(),
 					dieta.getGlutem()).orElse(null);
-		} else {
+		} else if (pretencaoFisica == 'P') {
 			return dietaRepository
 					.findByNumeroCaloriasLessThanAndVeganoAndVegetarianoAndLactoseAndGlutem(dieta.getNumeroCalorias(),
 							dieta.getVegano(), dieta.getVegetariano(), dieta.getLactose(), dieta.getGlutem())
 					.orElse(null);
-		}
 
+		} else {
+		
+			List<Dieta> listaDieta = dietaRepository.findByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutemOrderByNumeroCaloriasAsc(dieta.getNumeroCalorias(),
+					dieta.getVegano(), dieta.getVegetariano(), dieta.getLactose(), dieta.getGlutem());
+			
+			return listaDieta.get(0);
+		
+		
+		}
 	}
 }

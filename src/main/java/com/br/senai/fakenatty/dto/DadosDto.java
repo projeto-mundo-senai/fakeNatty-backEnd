@@ -3,16 +3,16 @@ package com.br.senai.fakenatty.dto;
 public class DadosDto {
 
 	DietaDto dietaDto;
-	PessoaDto pessoadDto;
+	PessoaDto pessoaDto;
 
-	private DadosDto() {
+	public  DadosDto() {
 		super();
 	}
 
-	private DadosDto(DietaDto dietaDto, PessoaDto pessoadDto) {
+	public DadosDto(DietaDto dietaDto, PessoaDto pessoadDto) {
 		super();
 		this.dietaDto = dietaDto;
-		this.pessoadDto = pessoadDto;
+		this.pessoaDto = pessoadDto;
 	}
 
 	public DietaDto getDietaDto() {
@@ -23,12 +23,12 @@ public class DadosDto {
 		this.dietaDto = dietaDto;
 	}
 
-	public PessoaDto getPessoadDto() {
-		return pessoadDto;
+	public PessoaDto getPessoaDto() {
+		return pessoaDto;
 	}
 
-	public void setPessoadDto(PessoaDto pessoadDto) {
-		this.pessoadDto = pessoadDto;
+	public void setPessoaDto(PessoaDto pessoadDto) {
+		this.pessoaDto = pessoadDto;
 	}
 
 }
