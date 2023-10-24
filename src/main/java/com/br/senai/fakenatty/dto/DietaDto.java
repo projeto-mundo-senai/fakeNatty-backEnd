@@ -6,10 +6,10 @@ public class DietaDto {
 
 	Integer id;
 	Double numeroCalorias;
-	Boolean vegano;
-	Boolean vegetariano;
-	Boolean lactose;
-	Boolean glutem;
+	boolean vegano;
+	boolean vegetariano;
+	boolean lactose;
+	boolean glutem;
 	String caminhoArquivo;
 	
 	public DietaDto(Dieta dieta) {
@@ -26,8 +26,8 @@ public class DietaDto {
 		super();
 	}
 
-	public DietaDto(Integer id, Double numeroCalorias, Boolean vegano, Boolean vegetariano, Boolean lactose,
-			Boolean glutem, String caminhoArquivo) {
+	public DietaDto(Integer id, Double numeroCalorias, boolean vegano, boolean vegetariano, boolean lactose,
+			boolean glutem, String caminhoArquivo) {
 		super();
 		this.id = id;
 		this.numeroCalorias = numeroCalorias;
@@ -54,7 +54,7 @@ public class DietaDto {
 		this.numeroCalorias = numeroCalorias;
 	}
 
-	public Boolean getVegano() {
+	public boolean getVegano() {
 		return vegano;
 	}
 
@@ -62,7 +62,7 @@ public class DietaDto {
 		this.vegano = vegano;
 	}
 
-	public Boolean getVegetariano() {
+	public boolean getVegetariano() {
 		return vegetariano;
 	}
 
@@ -70,7 +70,7 @@ public class DietaDto {
 		this.vegetariano = vegetariano;
 	}
 
-	public Boolean getLactose() {
+	public boolean getLactose() {
 		return lactose;
 	}
 
@@ -78,7 +78,7 @@ public class DietaDto {
 		this.lactose = lactose;
 	}
 
-	public Boolean getGlutem() {
+	public boolean getGlutem() {
 		return glutem;
 	}
 

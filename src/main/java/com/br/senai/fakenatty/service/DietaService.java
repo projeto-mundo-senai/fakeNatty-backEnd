@@ -25,12 +25,12 @@ public class DietaService {
 		Dieta dieta = new Dieta(dietaDto);
 		// INFLUENCIA DA PRETENCAO FISICA INFLUENCIA NA DIETA
 		if (pretencaoFisica == 'G') {
-			return dietaRepository.findByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutem(
+			return dietaRepository.findFirstByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutem(
 					dieta.getNumeroCalorias(), dieta.getVegano(), dieta.getVegetariano(), dieta.getLactose(),
 					dieta.getGlutem()).orElse(null);
 		} else if (pretencaoFisica == 'P') {
 			return dietaRepository
-					.findByNumeroCaloriasLessThanAndVeganoAndVegetarianoAndLactoseAndGlutem(dieta.getNumeroCalorias(),
+					.findFirstByNumeroCaloriasLessThanAndVeganoAndVegetarianoAndLactoseAndGlutem(dieta.getNumeroCalorias(),
 							dieta.getVegano(), dieta.getVegetariano(), dieta.getLactose(), dieta.getGlutem())
 					.orElse(null);
 

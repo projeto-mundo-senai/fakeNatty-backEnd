@@ -15,10 +15,10 @@ public interface DietaRepository extends JpaRepository<Dieta, Integer> {
 	List<Dieta> findByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutemOrderByNumeroCaloriasAsc(Double numeroCalorias,
 			Boolean vegano, Boolean vegetariano, Boolean lactose, Boolean glutem);
 	
-	Optional<Dieta> findByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutem(Double numeroCalorias,
+	Optional<Dieta> findFirstByNumeroCaloriasGreaterThanAndVeganoAndVegetarianoAndLactoseAndGlutem(Double numeroCalorias,
 			Boolean vegano, Boolean vegetariano, Boolean lactose, Boolean glutem);
 	
-	Optional<Dieta> findByNumeroCaloriasLessThanAndVeganoAndVegetarianoAndLactoseAndGlutem(Double numeroCalorias,
+	Optional<Dieta> findFirstByNumeroCaloriasLessThanAndVeganoAndVegetarianoAndLactoseAndGlutem(Double numeroCalorias,
 			Boolean vegano, Boolean vegetariano, Boolean lactose, Boolean glutem);
 
 }

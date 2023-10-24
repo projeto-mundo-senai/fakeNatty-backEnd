@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.br.senai.fakenatty.dto.DadosDto;
 import com.br.senai.fakenatty.dto.DietaDto;
-import com.br.senai.fakenatty.dto.PessoaDto;
 import com.br.senai.fakenatty.model.Dieta;
 import com.br.senai.fakenatty.model.Pessoa;
 import com.br.senai.fakenatty.service.DietaService;

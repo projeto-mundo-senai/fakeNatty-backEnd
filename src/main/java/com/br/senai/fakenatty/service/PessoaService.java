@@ -8,7 +8,6 @@ import com.br.senai.fakenatty.dto.PessoaDto;
 import com.br.senai.fakenatty.model.Pessoa;
 import com.br.senai.fakenatty.repository.PessoaRepository;
 
-
 @Service
 public class PessoaService {
 
@@ -20,12 +19,12 @@ public class PessoaService {
 		return pessoaRepository.save(pessoa);
 
 	}
-	
-	public List<Pessoa> listaPessoa(){
+
+	public List<Pessoa> listaPessoa() {
 		return pessoaRepository.findAll();
 	}
-	
-public void excluirPessoa(Integer id) {
-	pessoaRepository.deleteById(id);
-}
+
+	public void excluirPessoa(Integer id) {
+		pessoaRepository.deleteById(id);
+	}
 }
