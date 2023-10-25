@@ -169,19 +169,19 @@ public class Pessoa {
 
 			if (this.nivelAtividadeFisica == 'S') {
 
-				this.taxaMetabolica = this.taxaMetabolica + 100.00;
+				this.taxaMetabolica = this.taxaMetabolica + 50;
 
 			} else if (this.nivelAtividadeFisica == 'A') {
 
-				this.taxaMetabolica = taxaMetabolica + 280;
+				this.taxaMetabolica = taxaMetabolica + 75;
 
 			} else if (this.nivelAtividadeFisica == 'M') {
 
-				this.taxaMetabolica = this.taxaMetabolica + 460.00;
+				this.taxaMetabolica = this.taxaMetabolica + 100;
 
 			} else if (this.nivelAtividadeFisica == 'F') {
 
-				this.taxaMetabolica = this.taxaMetabolica + 640.00;
+				this.taxaMetabolica = this.taxaMetabolica + 150;
 
 			}
 
@@ -191,19 +191,19 @@ public class Pessoa {
 
 			if (this.nivelAtividadeFisica == 'S') {
 
-				this.taxaMetabolica = this.taxaMetabolica + 100.00;
+				this.taxaMetabolica = this.taxaMetabolica + 50;
 
 			} else if (this.nivelAtividadeFisica == 'A') {
 
-				this.taxaMetabolica = taxaMetabolica + 280;
+				this.taxaMetabolica = taxaMetabolica + 75;
 
 			} else if (this.nivelAtividadeFisica == 'M') {
 
-				this.taxaMetabolica = this.taxaMetabolica + 460.00;
+				this.taxaMetabolica = this.taxaMetabolica + 100;
 
 			} else if (this.nivelAtividadeFisica == 'F') {
 
-				this.taxaMetabolica = this.taxaMetabolica + 640.00;
+				this.taxaMetabolica = this.taxaMetabolica + 150;
 
 			}
 
